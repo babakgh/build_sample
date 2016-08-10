@@ -3,11 +3,11 @@ build:
   steps:
     builder:
       name: builder
-      dockerfile: Dockerfile.builder
+      dockerfile: dockerfiles/Dockerfile.builder
       artifacts:
         - /go/src/github.com/shahriarb/build_sample/ha_build_sample
     deployment:
         name: deployer
-        dockerfile: Dockerfile.deployment
+        dockerfile: dockerfiles/Dockerfile.deployment
         depends_on:
           - builder
